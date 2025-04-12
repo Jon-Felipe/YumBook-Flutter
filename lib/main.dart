@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yumbook_flutter/screens/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,10 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Yumbook Flutter')),
-        body: const Center(child: Center(child: Text('Hello World'))),
-      ),
+      home: LoginScreen(),
     );
   }
 }
