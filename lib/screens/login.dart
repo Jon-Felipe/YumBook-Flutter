@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yumbook_flutter/screens/home.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:yumbook_flutter/widgets/shared/social_button.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -155,79 +156,19 @@ class _LoginScreenState extends State<LoginScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      InkWell(
-                        onTap: () {},
-                        borderRadius: BorderRadius.circular(50),
-                        child: Container(
-                          height: 70,
-                          width: 70,
-                          padding: EdgeInsets.all(12),
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.transparent,
-                            border: Border.all(
-                              color: Colors.grey.shade300,
-                              width: 1.5,
-                            ),
-                          ),
-                          child: Center(
-                            child: FaIcon(
-                              FontAwesomeIcons.apple,
-                              color: Colors.black,
-                              size: 32,
-                            ),
-                          ),
-                        ),
+                      SocialIconButton(
+                        icon: FontAwesomeIcons.apple,
+                        iconColor: Colors.black,
                       ),
                       const SizedBox(width: 20),
-                      InkWell(
-                        onTap: () {},
-                        borderRadius: BorderRadius.circular(50),
-                        child: Container(
-                          height: 70,
-                          width: 70,
-                          padding: EdgeInsets.all(12),
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.transparent,
-                            border: Border.all(
-                              color: Colors.grey.shade300,
-                              width: 1.5,
-                            ),
-                          ),
-                          child: Center(
-                            child: FaIcon(
-                              FontAwesomeIcons.google,
-                              color: Colors.red,
-                              size: 32,
-                            ),
-                          ),
-                        ),
+                      SocialIconButton(
+                        icon: FontAwesomeIcons.google,
+                        iconColor: Colors.red,
                       ),
                       const SizedBox(width: 20),
-                      InkWell(
-                        onTap: () {},
-                        borderRadius: BorderRadius.circular(50),
-                        child: Container(
-                          height: 70,
-                          width: 70,
-                          padding: EdgeInsets.all(12),
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.transparent,
-                            border: Border.all(
-                              color: Colors.grey.shade300,
-                              width: 1.5,
-                            ),
-                          ),
-                          child: Center(
-                            child: FaIcon(
-                              FontAwesomeIcons.facebookF,
-                              color: Colors.blue,
-                              size: 32,
-                            ),
-                          ),
-                        ),
+                      SocialIconButton(
+                        icon: FontAwesomeIcons.facebookF,
+                        iconColor: Colors.blue,
                       ),
                     ],
                   ),
