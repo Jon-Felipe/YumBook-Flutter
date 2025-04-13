@@ -21,17 +21,37 @@ class Input extends StatefulWidget {
 }
 
 class _InputState extends State<Input> {
+  late bool _obscureText;
+
+  @override
+  void initState() {
+    super.initState();
+    _obscureText = widget.isPassword;
+  }
+
+  void _toggleVisibility() {
+    setState(() {
+      _obscureText = !_obscureText;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       keyboardType: widget.keyboardType,
+      obscureText: _obscureText,
       decoration: InputDecoration(
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
         labelText: widget.label,
         hintText: widget.hintText,
         suffixIcon:
             widget.isPassword
-                ? IconButton(icon: Icon(Icons.visibility_off), onPressed: () {})
+                ? IconButton(
+                  icon: Icon(
+                    _obscureText ? Icons.visibility_off : Icons.visibility,
+                  ),
+                  onPressed: _toggleVisibility,
+                )
                 : null,
       ),
       validator: widget.validator,
