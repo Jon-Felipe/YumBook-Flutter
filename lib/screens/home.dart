@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // data
 import 'package:yumbook_flutter/data/dummy_data.dart';
+import 'package:yumbook_flutter/widgets/shared/pill.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -126,29 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         itemCount: categories.length,
                         itemBuilder: (ctx, index) {
                           final category = categories[index];
-                          return Padding(
-                            padding: const EdgeInsets.only(right: 16),
-                            child: GestureDetector(
-                              onTap: () {},
-                              child: Container(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 16,
-                                  vertical: 8,
-                                ),
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: Colors.grey.shade400,
-                                    width: 1,
-                                  ),
-                                  borderRadius: BorderRadius.circular(30),
-                                ),
-                                child: Text(
-                                  category.name,
-                                  style: TextStyle(fontSize: 16),
-                                ),
-                              ),
-                            ),
-                          );
+                          return Pill(text: category.name);
                         },
                       ),
                     ),
