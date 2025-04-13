@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:yumbook_flutter/screens/tabs.dart';
 import 'package:yumbook_flutter/widgets/shared/input.dart';
 
 // screens
 import 'package:yumbook_flutter/screens/register.dart';
-import 'package:yumbook_flutter/screens/home.dart';
 
 // widgets
 import 'package:yumbook_flutter/widgets/shared/social_button.dart';
@@ -30,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (ctx) => const HomeScreen()),
+        MaterialPageRoute(builder: (ctx) => const TabsScreen()),
       );
     }
   }
