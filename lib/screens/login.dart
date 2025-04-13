@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:yumbook_flutter/screens/home.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:yumbook_flutter/widgets/shared/input.dart';
+
+// widgets
 import 'package:yumbook_flutter/widgets/shared/social_button.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -41,37 +44,23 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Column(
                       spacing: 25,
                       children: [
-                        TextFormField(
+                        Input(
+                          label: 'Email',
+                          hintText: 'example@gmail.com',
                           keyboardType: TextInputType.emailAddress,
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            labelText: 'Email',
-                            hintText: 'example@gmail.com',
-                          ),
-                          validator: (String? value) {
+                          validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Please enter your email';
                             }
                             return null;
                           },
                         ),
-                        TextFormField(
+                        Input(
+                          label: 'Password',
+                          hintText: '************',
                           keyboardType: TextInputType.text,
-                          obscureText: true,
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            labelText: 'Password',
-                            hintText: '********',
-                            suffixIcon: IconButton(
-                              onPressed: () {},
-                              icon: Icon(Icons.visibility_off_outlined),
-                            ),
-                          ),
-                          validator: (String? value) {
+                          isPassword: true,
+                          validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Please enter your password';
                             }
