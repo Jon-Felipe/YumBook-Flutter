@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:yumbook_flutter/widgets/shared/input.dart';
 
 // screens
+import 'package:yumbook_flutter/screens/register.dart';
 import 'package:yumbook_flutter/screens/home.dart';
 
 // widgets
@@ -183,7 +184,14 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: TextStyle(fontSize: 16),
                       ),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (ctx) => RegisterScreen(),
+                            ),
+                          );
+                        },
                         child: Text(
                           "Sign Up",
                           style: TextStyle(
