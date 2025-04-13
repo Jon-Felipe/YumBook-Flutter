@@ -23,6 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 32),
               child: Column(
                 children: [
+                  // header
                   Text(
                     'Sign In',
                     style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
@@ -32,6 +33,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     style: TextStyle(fontSize: 16, color: Colors.grey[600]),
                   ),
                   const SizedBox(height: 40),
+
+                  // form
                   Form(
                     key: _formKey,
                     child: Column(
@@ -74,6 +77,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             return null;
                           },
                         ),
+
+                        // forgot password button link
                         Align(
                           alignment: Alignment.centerRight,
                           child: TextButton(
@@ -93,6 +98,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ),
                         ),
+
+                        // sign in button
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
@@ -123,6 +130,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 40),
+
+                  // divider text
                   Row(
                     children: [
                       Expanded(
@@ -141,6 +150,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                   const SizedBox(height: 30),
+
+                  // social icons
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -221,6 +232,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                   const SizedBox(height: 40),
+
+                  // sign up text
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
