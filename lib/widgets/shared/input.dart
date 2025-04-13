@@ -8,6 +8,7 @@ class Input extends StatefulWidget {
     this.keyboardType = TextInputType.text,
     this.isPassword = false,
     this.validator,
+    this.onSaved,
   });
 
   final String label;
@@ -15,6 +16,7 @@ class Input extends StatefulWidget {
   final TextInputType keyboardType;
   final bool isPassword;
   final String? Function(String?)? validator;
+  final void Function(String?)? onSaved;
 
   @override
   State<Input> createState() => _InputState();
@@ -40,6 +42,8 @@ class _InputState extends State<Input> {
     return TextFormField(
       keyboardType: widget.keyboardType,
       obscureText: _obscureText,
+      validator: widget.validator,
+      onSaved: widget.onSaved,
       decoration: InputDecoration(
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
         labelText: widget.label,
@@ -54,7 +58,6 @@ class _InputState extends State<Input> {
                 )
                 : null,
       ),
-      validator: widget.validator,
     );
   }
 }

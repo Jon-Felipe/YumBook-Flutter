@@ -14,7 +14,18 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
+  String? _email;
+  String? _password;
+
+  void _submitForm() {
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
+
+      print('Email: $_email');
+      print('Password: $_password');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             }
                             return null;
                           },
+                          onSaved: (value) => _email = value,
                         ),
                         Input(
                           label: 'Password',
@@ -66,6 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             }
                             return null;
                           },
+                          onSaved: (value) => _password = value,
                         ),
 
                         // forgot password button link
@@ -93,16 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
-                            onPressed: () {
-                              if (_formKey.currentState!.validate()) {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => HomeScreen(),
-                                  ),
-                                );
-                              }
-                            },
+                            onPressed: _submitForm,
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.orange,
                               foregroundColor: Colors.white,
