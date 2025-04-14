@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+// screens
+import 'package:yumbook_flutter/screens/category.dart';
+
 // data
 import 'package:yumbook_flutter/data/dummy_data.dart';
 import 'package:yumbook_flutter/widgets/shared/pill.dart';
@@ -116,7 +119,26 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                         Spacer(),
-                        Text('See All', style: TextStyle(color: Colors.orange)),
+                        TextButton(
+                          style: TextButton.styleFrom(
+                            overlayColor: Colors.transparent,
+                            padding: EdgeInsets.zero,
+                            minimumSize: Size(0, 0),
+                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (ctx) => CategoryScreen(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'See All',
+                            style: TextStyle(color: Colors.orange),
+                          ),
+                        ),
                       ],
                     ),
                     const SizedBox(height: 10),
