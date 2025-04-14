@@ -48,7 +48,7 @@ class RecipeCard extends StatelessWidget {
                           color: Colors.orange,
                         ),
                         Text('${recipe.totalTimeMinutes} min'),
-                        Text('• Easy'),
+                        Text('• ${recipe.difficulty.difficultyString}'),
                         Text('• by ${recipe.author}'),
                       ],
                     ),

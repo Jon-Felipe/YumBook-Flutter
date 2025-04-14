@@ -35,3 +35,16 @@ class Recipe {
   final List<String> category;
   final String author;
 }
+
+extension DifficultyExtension on Difficulty {
+  String get difficultyString {
+    switch (this) {
+      case Difficulty.easy:
+        return 'Easy';
+      case Difficulty.medium:
+        return 'Medium';
+      case Difficulty.hard:
+        return 'Hard';
+    }
+  }
+}
