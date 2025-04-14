@@ -7,6 +7,7 @@ import 'package:yumbook_flutter/screens/category.dart';
 // data
 import 'package:yumbook_flutter/data/dummy_data.dart';
 import 'package:yumbook_flutter/widgets/shared/pill.dart';
+import 'package:yumbook_flutter/widgets/shared/text_link.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -119,13 +120,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                         Spacer(),
-                        TextButton(
-                          style: TextButton.styleFrom(
-                            overlayColor: Colors.transparent,
-                            padding: EdgeInsets.zero,
-                            minimumSize: Size(0, 0),
-                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          ),
+                        TextLink(
+                          text: 'See All',
                           onPressed: () {
                             Navigator.push(
                               context,
@@ -134,10 +130,6 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             );
                           },
-                          child: Text(
-                            'See All',
-                            style: TextStyle(color: Colors.orange),
-                          ),
                         ),
                       ],
                     ),
