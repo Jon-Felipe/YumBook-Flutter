@@ -176,6 +176,67 @@ class _HomeScreenState extends State<HomeScreen> {
 
                     // recipe list
                     RecipeList(recipes: recipes),
+                    const SizedBox(height: 20),
+
+                    // list of chefs
+                    Row(
+                      children: [
+                        Text(
+                          'Top Chefs',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Spacer(),
+                        TextLink(
+                          text: 'See All',
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (ctx) => CategoryScreen(),
+                              ),
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 10),
+                    SizedBox(
+                      height: 150,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: chefAuthors.length,
+                        itemBuilder: (ctx, index) {
+                          final chef = chefAuthors[index];
+                          return Padding(
+                            padding: const EdgeInsets.only(right: 12),
+                            child: Column(
+                              children: [
+                                CircleAvatar(
+                                  radius: 50,
+                                  backgroundColor: Colors.grey.shade200,
+                                ),
+                                const SizedBox(height: 8),
+                                SizedBox(
+                                  width: 80,
+                                  child: Text(
+                                    '${chef.firstName} ${chef.lastName[0]}.',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      ),
+                    ),
                   ],
                 ),
               ],
