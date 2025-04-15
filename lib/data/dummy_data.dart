@@ -332,7 +332,7 @@ final List<Recipe> recipes = [
   ),
 ];
 
-final List<Author> chefAuthor = [
+final List<Author> chefAuthors = [
   Author(
     id: '1',
     firstName: 'Gordon',
