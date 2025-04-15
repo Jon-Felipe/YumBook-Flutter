@@ -1,7 +1,8 @@
 import 'package:yumbook_flutter/models/category.dart';
 import 'package:yumbook_flutter/models/recipe.dart';
+import 'package:yumbook_flutter/models/author.dart';
 
-const List<Category> categories = [
+final List<Category> categories = [
   Category(
     id: 'c1',
     name: 'Breakfast',
@@ -49,7 +50,7 @@ const List<Category> categories = [
   ),
 ];
 
-const List<Recipe> recipes = [
+final List<Recipe> recipes = [
   Recipe(
     id: '1',
     name: 'Classic Pancakes',
@@ -328,5 +329,118 @@ const List<Recipe> recipes = [
     difficulty: Difficulty.medium,
     category: ['c3', 'c6'],
     author: 'Chef Remy',
+  ),
+];
+
+final List<Author> chefAuthor = [
+  Author(
+    id: '1',
+    firstName: 'Gordon',
+    lastName: 'Ramsay',
+    bio:
+        'Gordon Ramsay is a British chef, restaurateur, and television personality known for his fiery temper and Michelin-starred restaurants.',
+    profilePictureUrl: '',
+    specialties: 'British, French, Fine Dining',
+    awards: ['3 Michelin Stars', 'OBE (Order of the British Empire)'],
+    yearsActive: 30,
+  ),
+  Author(
+    id: '2',
+    firstName: 'Julia',
+    lastName: 'Child',
+    bio:
+        'Julia Child was an American cooking teacher, author, and television personality who introduced French cuisine to the American public.',
+    profilePictureUrl: '',
+    specialties: 'French Cuisine, Classic Techniques',
+    awards: ['Peabody Award', 'Emmy Award'],
+    yearsActive: 40,
+  ),
+  Author(
+    id: '3',
+    firstName: 'Massimo',
+    lastName: 'Bottura',
+    bio:
+        'Massimo Bottura is an Italian chef and the owner of Osteria Francescana, a three-Michelin-star restaurant based in Modena, Italy.',
+    profilePictureUrl: '',
+    specialties: 'Italian, Modern Cuisine',
+    awards: ["3 Michelin Stars', 'World’s 50 Best Restaurants Winner"],
+    yearsActive: 25,
+  ),
+  Author(
+    id: '4',
+    firstName: 'Samin',
+    lastName: 'Nosrat',
+    bio:
+        'Samin Nosrat is an American chef, author, and TV host best known for her book and series "Salt, Fat, Acid, Heat".',
+    profilePictureUrl: '',
+    specialties: 'California Cuisine, Persian-Inspired Dishes',
+    awards: ['James Beard Award'],
+    yearsActive: 15,
+  ),
+  Author(
+    id: '5',
+    firstName: 'Roy',
+    lastName: 'Choi',
+    bio:
+        'Roy Choi is a Korean-American chef known for starting the gourmet food truck movement with Kogi BBQ.',
+    profilePictureUrl: '',
+    specialties: 'Korean-Mexican Fusion, Street Food',
+    awards: ['Time 100 Most Influential People'],
+    yearsActive: 20,
+  ),
+  Author(
+    id: '6',
+    firstName: 'Alice',
+    lastName: 'Waters',
+    bio:
+        'Alice Waters is a pioneer of the farm-to-table movement and the founder of Chez Panisse in Berkeley, California.',
+    profilePictureUrl: '',
+    specialties: 'California Cuisine, Organic, Farm-to-Table',
+    awards: ['James Beard Award', 'National Humanities Medal'],
+    yearsActive: 45,
+  ),
+  Author(
+    id: '7',
+    firstName: 'José',
+    lastName: 'Andrés',
+    bio:
+        'José Andrés is a Spanish-American chef and humanitarian known for bringing Spanish cuisine to America and his disaster relief efforts.',
+    profilePictureUrl: '',
+    specialties: 'Spanish Cuisine, Tapas, Humanitarian Cooking',
+    awards: ['National Humanities Medal', 'James Beard Award'],
+    yearsActive: 30,
+  ),
+  Author(
+    id: '8',
+    firstName: 'Dominique',
+    lastName: 'Crenn',
+    bio:
+        'Dominique Crenn is the first female chef in the U.S. to earn three Michelin stars for her restaurant Atelier Crenn.',
+    profilePictureUrl: '',
+    specialties: 'Modern French, Artistic Cuisine',
+    awards: ['3 Michelin Stars', 'Best Female Chef'],
+    yearsActive: 20,
+  ),
+  Author(
+    id: '9',
+    firstName: 'Marcus',
+    lastName: 'Samuelsson',
+    bio:
+        'Marcus Samuelsson is an Ethiopian-born Swedish-American chef celebrated for his blending of international cuisine and culture.',
+    profilePictureUrl: '',
+    specialties: 'African, Swedish, Soul Food Fusion',
+    awards: ['James Beard Award', 'Top Chef Masters Winner'],
+    yearsActive: 25,
+  ),
+  Author(
+    id: '10',
+    firstName: 'Nadiya',
+    lastName: 'Hussain',
+    bio:
+        'Nadiya Hussain rose to fame after winning The Great British Bake Off and has since authored several cookbooks and hosted TV shows.',
+    profilePictureUrl: '',
+    specialties: 'Baking, British-Asian Fusion',
+    awards: ['MBE (Member of the Order of the British Empire)'],
+    yearsActive: 10,
   ),
 ];
