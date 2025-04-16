@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // screens
 import 'package:yumbook_flutter/screens/category.dart';
+import 'package:yumbook_flutter/screens/chef.dart';
 import 'package:yumbook_flutter/widgets/chef/chef_avatar.dart';
 
 // components
@@ -196,7 +197,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (ctx) => CategoryScreen(),
+                                builder:
+                                    (ctx) => ChefScreen(chefs: chefAuthors),
                               ),
                             );
                           },

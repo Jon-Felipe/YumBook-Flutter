@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+// extras
 import 'package:yumbook_flutter/models/author.dart';
 
 class ChefAvatar extends StatelessWidget {
