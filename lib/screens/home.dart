@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // screens
 import 'package:yumbook_flutter/screens/category.dart';
+import 'package:yumbook_flutter/widgets/chef/chef_avatar.dart';
 
 // components
 import 'package:yumbook_flutter/widgets/shared/text_link.dart';
@@ -210,30 +211,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         itemCount: chefAuthors.length,
                         itemBuilder: (ctx, index) {
                           final chef = chefAuthors[index];
-                          return Padding(
-                            padding: const EdgeInsets.only(right: 12),
-                            child: Column(
-                              children: [
-                                CircleAvatar(
-                                  radius: 50,
-                                  backgroundColor: Colors.grey.shade200,
-                                ),
-                                const SizedBox(height: 8),
-                                SizedBox(
-                                  width: 80,
-                                  child: Text(
-                                    '${chef.firstName} ${chef.lastName[0]}.',
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          );
+                          return ChefAvatar(chef: chef);
                         },
                       ),
                     ),
