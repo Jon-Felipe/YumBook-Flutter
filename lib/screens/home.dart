@@ -98,14 +98,36 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     const SizedBox(width: 15),
-                    Container(
+                    IconButton(
+                      icon: Icon(FontAwesomeIcons.sliders, size: 22),
+                      onPressed: () {
+                        showBottomSheet(
+                          backgroundColor: Colors.white,
+                          context: context,
+                          builder:
+                              (ctx) => AlertDialog(
+                                title: Text('Filters'),
+                                content: Text('Filters Modal'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () => Navigator.pop(context),
+                                    child: Text('Close'),
+                                  ),
+                                ],
+                              ),
+                        );
+                      },
                       padding: EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.rectangle,
-                        border: Border.all(color: Colors.black, width: 1),
-                        borderRadius: BorderRadius.circular(8),
+                      constraints: BoxConstraints(),
+                      splashRadius: 24,
+                      style: ButtonStyle(
+                        shape: WidgetStateProperty.all(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                            side: BorderSide(color: Colors.black, width: 1),
+                          ),
+                        ),
                       ),
-                      child: Icon(FontAwesomeIcons.sliders, size: 22),
                     ),
                   ],
                 ),
