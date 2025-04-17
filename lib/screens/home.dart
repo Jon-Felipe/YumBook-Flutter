@@ -4,12 +4,13 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // screens
 import 'package:yumbook_flutter/screens/category.dart';
 import 'package:yumbook_flutter/screens/chef.dart';
-import 'package:yumbook_flutter/widgets/chef/chef_avatar.dart';
 
-// components
+// widgets
 import 'package:yumbook_flutter/widgets/shared/text_link.dart';
 import 'package:yumbook_flutter/widgets/shared/pill.dart';
 import 'package:yumbook_flutter/widgets/recipe/recipe_list.dart';
+import 'package:yumbook_flutter/widgets/chef/chef_avatar.dart';
+import 'package:yumbook_flutter/widgets/home/filters_modal.dart';
 
 // data
 import 'package:yumbook_flutter/data/dummy_data.dart';
@@ -101,20 +102,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     IconButton(
                       icon: Icon(FontAwesomeIcons.sliders, size: 22),
                       onPressed: () {
-                        showBottomSheet(
-                          backgroundColor: Colors.white,
+                        showModalBottomSheet(
                           context: context,
-                          builder:
-                              (ctx) => AlertDialog(
-                                title: Text('Filters'),
-                                content: Text('Filters Modal'),
-                                actions: [
-                                  TextButton(
-                                    onPressed: () => Navigator.pop(context),
-                                    child: Text('Close'),
-                                  ),
-                                ],
-                              ),
+                          isScrollControlled: true,
+                          backgroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                              top: Radius.circular(16),
+                            ),
+                          ),
+                          builder: (ctx) => FiltersModal(),
                         );
                       },
                       padding: EdgeInsets.all(12),
