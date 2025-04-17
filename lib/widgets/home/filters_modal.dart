@@ -12,13 +12,31 @@ class FiltersModal extends StatelessWidget {
 
   final List<Category> categories;
 
+  List<Widget> _generateMinuteMarkers() {
+    List<Widget> markers = [];
+    for (int i = 1; i <= 10; i++) {
+      double value = i * 5;
+      markers.add(
+        SizedBox(
+          width: 20,
+          child: Center(
+            child: Text(
+              value.toStringAsFixed(0),
+              style: TextStyle(fontSize: 12),
+            ),
+          ),
+        ),
+      );
+    }
+    return markers;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
@@ -54,6 +72,23 @@ class FiltersModal extends StatelessWidget {
                 return Pill(text: category.name);
               },
             ),
+          ),
+          const SizedBox(height: 20),
+          Text(
+            'Preparation Time (Minutes)',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          RangeSlider(
+            values: RangeValues(15, 30),
+            min: 5,
+            max: 50,
+            divisions: 9,
+            onChanged: (values) {},
+          ),
+          const SizedBox(height: 5),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: _generateMinuteMarkers(),
           ),
         ],
       ),
