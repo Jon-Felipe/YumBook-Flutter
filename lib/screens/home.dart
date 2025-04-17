@@ -111,7 +111,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               top: Radius.circular(16),
                             ),
                           ),
-                          builder: (ctx) => FiltersModal(),
+                          builder:
+                              (ctx) => FiltersModal(categories: categories),
                         );
                       },
                       padding: EdgeInsets.all(12),
@@ -130,6 +131,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 const SizedBox(height: 30),
 
+                // recipe category pills
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
