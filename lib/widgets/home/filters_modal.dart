@@ -7,10 +7,17 @@ import 'package:yumbook_flutter/widgets/shared/pill.dart';
 // extras
 import 'package:yumbook_flutter/models/category.dart';
 
-class FiltersModal extends StatelessWidget {
+class FiltersModal extends StatefulWidget {
   const FiltersModal({super.key, required this.categories});
 
   final List<Category> categories;
+
+  @override
+  State<FiltersModal> createState() => _FiltersModalState();
+}
+
+class _FiltersModalState extends State<FiltersModal> {
+  RangeValues _currentRangeValues = const RangeValues(15, 30);
 
   List<Widget> _generateMinuteMarkers() {
     List<Widget> markers = [];
@@ -54,6 +61,8 @@ class FiltersModal extends StatelessWidget {
           ),
           Divider(),
           const SizedBox(height: 20),
+
+          // category pills
           Text(
             'Categories',
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -63,27 +72,37 @@ class FiltersModal extends StatelessWidget {
             height: 40,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: categories.length,
+              itemCount: widget.categories.length,
               itemBuilder: (ctx, index) {
                 if (index == 0) {
                   return Pill(text: 'All');
                 }
-                final category = categories[index - 1];
+                final category = widget.categories[index - 1];
                 return Pill(text: category.name);
               },
             ),
           ),
           const SizedBox(height: 20),
+
+          // preparation slider
           Text(
             'Preparation Time (Minutes)',
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           RangeSlider(
-            values: RangeValues(15, 30),
+            values: _currentRangeValues,
             min: 5,
             max: 50,
             divisions: 9,
-            onChanged: (values) {},
+            labels: RangeLabels(
+              _currentRangeValues.start.round().toString(),
+              _currentRangeValues.end.round().toString(),
+            ),
+            onChanged: (RangeValues values) {
+              setState(() {
+                _currentRangeValues = values;
+              });
+            },
             activeColor: Colors.orange,
           ),
           const SizedBox(height: 5),
