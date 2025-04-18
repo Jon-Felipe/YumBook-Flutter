@@ -34,17 +34,17 @@ final List<Category> categories = [
     description: "Delicious recipes for those who avoid gluten.",
   ),
   Category(
-    id: 'c6',
+    id: 'c7',
     name: 'Vegetarian',
     description: "Tasty vegetarian meals for a balanced diet.",
   ),
   Category(
-    id: 'c6',
+    id: 'c8',
     name: 'Quick & Easy',
     description: "Simple and fast recipes for busy individuals.",
   ),
   Category(
-    id: 'c7',
+    id: 'c9',
     name: 'Budget Meals',
     description: "Affordable recipes that don’t break the bank.",
   ),
