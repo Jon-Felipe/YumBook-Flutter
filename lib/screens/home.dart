@@ -111,8 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               top: Radius.circular(16),
                             ),
                           ),
-                          builder:
-                              (ctx) => FiltersModal(categories: categories),
+                          builder: (ctx) => FiltersModal(),
                         );
                       },
                       padding: EdgeInsets.all(12),

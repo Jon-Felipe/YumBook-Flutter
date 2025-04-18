@@ -2,21 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // widgets
-import 'package:yumbook_flutter/widgets/shared/pill.dart';
+import 'package:yumbook_flutter/widgets/home/selectable_pill.dart';
+// import 'package:yumbook_flutter/widgets/shared/pill.dart';
 
 // extras
 import 'package:yumbook_flutter/models/category.dart';
+import 'package:yumbook_flutter/data/dummy_data.dart';
 
 class FiltersModal extends StatefulWidget {
-  const FiltersModal({super.key, required this.categories});
-
-  final List<Category> categories;
+  const FiltersModal({super.key});
 
   @override
   State<FiltersModal> createState() => _FiltersModalState();
 }
 
 class _FiltersModalState extends State<FiltersModal> {
+  String? selectedCategoryId = 'c0';
   RangeValues _currentRangeValues = const RangeValues(15, 30);
 
   List<Widget> _generateMinuteMarkers() {
@@ -40,6 +41,11 @@ class _FiltersModalState extends State<FiltersModal> {
 
   @override
   Widget build(BuildContext context) {
+    final categoryOptions = [
+      const Category(id: 'c0', name: 'All', description: ''),
+      ...categories,
+    ];
+
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
       child: Column(
@@ -68,18 +74,25 @@ class _FiltersModalState extends State<FiltersModal> {
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 10),
-          SizedBox(
-            height: 40,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: widget.categories.length,
-              itemBuilder: (ctx, index) {
-                if (index == 0) {
-                  return Pill(text: 'All');
-                }
-                final category = widget.categories[index - 1];
-                return Pill(text: category.name);
-              },
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children:
+                  categoryOptions.map((category) {
+                    final isSelected =
+                        selectedCategoryId == category.id ||
+                        (category.id == 'all' && selectedCategoryId == null);
+                    return SelectablePill(
+                      label: category.name,
+                      isSelected: isSelected,
+                      onTap: () {
+                        setState(() {
+                          selectedCategoryId =
+                              category.id == 'all' ? null : category.id;
+                        });
+                      },
+                    );
+                  }).toList(),
             ),
           ),
           const SizedBox(height: 20),
