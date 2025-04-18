@@ -84,6 +84,7 @@ class FiltersModal extends StatelessWidget {
             max: 50,
             divisions: 9,
             onChanged: (values) {},
+            activeColor: Colors.orange,
           ),
           const SizedBox(height: 5),
           Row(
