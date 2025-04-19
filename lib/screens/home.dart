@@ -188,7 +188,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (ctx) => RecipesScreen(),
+                                builder:
+                                    (ctx) =>
+                                        RecipesScreen(title: 'Popular Recipes'),
                               ),
                             );
                           },
