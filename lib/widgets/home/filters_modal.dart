@@ -3,11 +3,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // widgets
 import 'package:yumbook_flutter/widgets/home/selectable_pill.dart';
-// import 'package:yumbook_flutter/widgets/shared/pill.dart';
 
 // extras
-import 'package:yumbook_flutter/models/category.dart';
 import 'package:yumbook_flutter/data/dummy_data.dart';
+import 'package:yumbook_flutter/models/recipe.dart';
+import 'package:yumbook_flutter/models/category.dart';
 
 class FiltersModal extends StatefulWidget {
   const FiltersModal({super.key});
@@ -18,6 +18,7 @@ class FiltersModal extends StatefulWidget {
 
 class _FiltersModalState extends State<FiltersModal> {
   String? selectedCategoryId = 'c0';
+  Difficulty? selectedDifficulty;
   RangeValues _currentRangeValues = const RangeValues(15, 30);
 
   List<Widget> _generateMinuteMarkers() {
@@ -122,6 +123,32 @@ class _FiltersModalState extends State<FiltersModal> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: _generateMinuteMarkers(),
+          ),
+          const SizedBox(height: 20),
+
+          // difficulty level pills
+          Text(
+            'Difficulty Level',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 10),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children:
+                  Difficulty.values.map((diff) {
+                    final isSelected = selectedDifficulty == diff;
+                    return SelectablePill(
+                      label: diff.difficultyString,
+                      isSelected: isSelected,
+                      onTap: () {
+                        setState(() {
+                          selectedDifficulty = diff;
+                        });
+                      },
+                    );
+                  }).toList(),
+            ),
           ),
         ],
       ),
