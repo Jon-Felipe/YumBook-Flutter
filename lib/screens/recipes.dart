@@ -17,9 +17,11 @@ class RecipesScreen extends StatelessWidget {
         centerTitle: true,
       ),
       backgroundColor: Colors.white,
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: RecipeList(recipes: recipes, horizontalScroll: false),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: RecipeList(recipes: recipes, horizontalScroll: false),
+        ),
       ),
     );
   }
