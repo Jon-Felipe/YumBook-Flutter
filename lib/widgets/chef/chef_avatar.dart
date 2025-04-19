@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // extras
 import 'package:yumbook_flutter/models/author.dart';
@@ -14,7 +15,11 @@ class ChefAvatar extends StatelessWidget {
       padding: EdgeInsets.only(right: 12),
       child: Column(
         children: [
-          CircleAvatar(radius: 50, backgroundColor: Colors.grey.shade200),
+          CircleAvatar(
+            radius: 50,
+            backgroundColor: Colors.grey.shade200,
+            child: Icon(FontAwesomeIcons.person, size: 36),
+          ),
           SizedBox(height: 8),
           SizedBox(
             width: 80,
