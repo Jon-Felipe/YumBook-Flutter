@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // screens
 import 'package:yumbook_flutter/screens/category.dart';
 import 'package:yumbook_flutter/screens/chef.dart';
+import 'package:yumbook_flutter/screens/recipes.dart';
 
 // widgets
 import 'package:yumbook_flutter/widgets/shared/text_link.dart';
@@ -187,7 +188,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (ctx) => CategoryScreen(),
+                                builder: (ctx) => RecipesScreen(),
                               ),
                             );
                           },
