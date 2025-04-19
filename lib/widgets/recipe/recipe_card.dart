@@ -3,14 +3,20 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:yumbook_flutter/models/recipe.dart';
 
 class RecipeCard extends StatelessWidget {
-  const RecipeCard({super.key, required this.recipe});
+  const RecipeCard({
+    super.key,
+    required this.recipe,
+    this.horizontalScroll = true,
+  });
 
   final Recipe recipe;
+  final bool horizontalScroll;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 300,
+      width: horizontalScroll ? 300 : double.infinity,
+      height: horizontalScroll ? null : 250,
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         clipBehavior: Clip.antiAlias,
