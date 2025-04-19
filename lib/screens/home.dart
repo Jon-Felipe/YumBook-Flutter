@@ -189,8 +189,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               context,
                               MaterialPageRoute(
                                 builder:
-                                    (ctx) =>
-                                        RecipesScreen(title: 'Popular Recipes'),
+                                    (ctx) => RecipesScreen(
+                                      title: 'Popular Recipes',
+                                      recipes: recipes,
+                                    ),
                               ),
                             );
                           },
