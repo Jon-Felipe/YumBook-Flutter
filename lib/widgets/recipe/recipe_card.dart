@@ -22,7 +22,9 @@ class RecipeCard extends StatelessWidget {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (ctx) => RecipeScreen()),
+            MaterialPageRoute(
+              builder: (ctx) => RecipeScreen(recipeId: recipe.id),
+            ),
           );
         },
         borderRadius: BorderRadius.circular(16),
