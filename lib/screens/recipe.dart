@@ -65,6 +65,32 @@ class RecipeScreen extends StatelessWidget {
                 ),
               ],
             ),
+            Padding(
+              padding: const EdgeInsets.all(22),
+              child: Row(
+                children: [
+                  Text(
+                    recipe.name,
+                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                  ),
+                  Spacer(),
+                  Row(
+                    spacing: 8,
+                    children: [
+                      Icon(
+                        FontAwesomeIcons.solidStar,
+                        size: 18,
+                        color: Colors.orange,
+                      ),
+                      Text(
+                        recipe.averageRating.toString(),
+                        style: TextStyle(fontSize: 18),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
