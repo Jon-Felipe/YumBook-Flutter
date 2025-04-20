@@ -24,7 +24,7 @@ class RecipeScreen extends StatelessWidget {
               children: [
                 Image.network(
                   'https://images.unsplash.com/photo-1608219992759-8d74ed8d76eb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-                  height: 250,
+                  height: 350,
                   width: double.infinity,
                   fit: BoxFit.cover,
                 ),
