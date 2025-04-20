@@ -68,7 +68,12 @@ class RecipeCard extends StatelessWidget {
                           ),
                           Text('${recipe.totalTimeMinutes} min'),
                           Text('• ${recipe.difficulty.difficultyString}'),
-                          Text('• by ${recipe.author}'),
+                          Expanded(
+                            child: Text(
+                              '• by ${recipe.author.firstName} ${recipe.author.lastName}',
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
                         ],
                       ),
                     ],
