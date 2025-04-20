@@ -129,6 +129,16 @@ class RecipeScreen extends StatelessWidget {
                       ),
                     ],
                   ),
+                  const SizedBox(height: 20),
+                  Text(
+                    'Description',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 5),
+                  Text(
+                    recipe.description,
+                    style: TextStyle(color: Colors.grey.shade600, fontSize: 18),
+                  ),
                 ],
               ),
             ),
