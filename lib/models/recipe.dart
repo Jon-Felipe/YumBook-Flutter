@@ -1,3 +1,5 @@
+import 'package:yumbook_flutter/models/author.dart';
+
 enum Difficulty { easy, medium, hard }
 
 class Recipe {
@@ -33,7 +35,7 @@ class Recipe {
   final int? numberOfReviews;
   final Difficulty difficulty;
   final List<String> category;
-  final String author;
+  final Author author;
 }
 
 extension DifficultyExtension on Difficulty {

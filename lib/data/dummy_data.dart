@@ -79,7 +79,7 @@ final List<Recipe> recipes = [
     numberOfReviews: 230,
     difficulty: Difficulty.easy,
     category: ['c1', 'c8'],
-    author: 'Chef Sarah',
+    author: chefAuthors[0],
   ),
   Recipe(
     id: '2',
@@ -109,7 +109,7 @@ final List<Recipe> recipes = [
     numberOfReviews: 310,
     difficulty: Difficulty.medium,
     category: ['c3'],
-    author: 'Chef Marco',
+    author: chefAuthors[1],
   ),
   Recipe(
     id: '3',
@@ -139,7 +139,7 @@ final List<Recipe> recipes = [
     numberOfReviews: 170,
     difficulty: Difficulty.medium,
     category: ['c3'],
-    author: 'Chef Priya',
+    author: chefAuthors[2],
   ),
   Recipe(
     id: '4',
@@ -164,7 +164,7 @@ final List<Recipe> recipes = [
     numberOfReviews: 95,
     difficulty: Difficulty.easy,
     category: ['c2', 'c7', 'c8'],
-    author: 'Chef Eleni',
+    author: chefAuthors[3],
   ),
   Recipe(
     id: '5',
@@ -193,7 +193,7 @@ final List<Recipe> recipes = [
     numberOfReviews: 88,
     difficulty: Difficulty.hard,
     category: ['c3'],
-    author: 'Chef Gordon',
+    author: chefAuthors[4],
   ),
   Recipe(
     id: '6',
@@ -220,7 +220,7 @@ final List<Recipe> recipes = [
     numberOfReviews: 120,
     difficulty: Difficulty.easy,
     category: ['c1', 'c7', 'c8'],
-    author: 'Chef Ava',
+    author: chefAuthors[5],
   ),
   Recipe(
     id: '7',
@@ -249,7 +249,7 @@ final List<Recipe> recipes = [
     numberOfReviews: 140,
     difficulty: Difficulty.medium,
     category: ['c2', 'c6'],
-    author: 'Chef Arun',
+    author: chefAuthors[6],
   ),
   Recipe(
     id: '8',
@@ -276,7 +276,7 @@ final List<Recipe> recipes = [
     numberOfReviews: 90,
     difficulty: Difficulty.medium,
     category: ['c3', 'c6'],
-    author: 'Chef Aiko',
+    author: chefAuthors[7],
   ),
   Recipe(
     id: '9',
@@ -304,7 +304,7 @@ final List<Recipe> recipes = [
     numberOfReviews: 160,
     difficulty: Difficulty.medium,
     category: ['c4', 'c6'],
-    author: 'Chef Lila',
+    author: chefAuthors[8],
   ),
   Recipe(
     id: '10',
@@ -328,13 +328,13 @@ final List<Recipe> recipes = [
     numberOfReviews: 105,
     difficulty: Difficulty.medium,
     category: ['c3', 'c6'],
-    author: 'Chef Remy',
+    author: chefAuthors[9],
   ),
 ];
 
 final List<Author> chefAuthors = [
   Author(
-    id: '1',
+    id: 'a1',
     firstName: 'Gordon',
     lastName: 'Ramsay',
     bio:
@@ -345,7 +345,7 @@ final List<Author> chefAuthors = [
     yearsActive: 30,
   ),
   Author(
-    id: '2',
+    id: 'a2',
     firstName: 'Julia',
     lastName: 'Child',
     bio:
@@ -356,7 +356,7 @@ final List<Author> chefAuthors = [
     yearsActive: 40,
   ),
   Author(
-    id: '3',
+    id: 'a3',
     firstName: 'Massimo',
     lastName: 'Bottura',
     bio:
@@ -367,7 +367,7 @@ final List<Author> chefAuthors = [
     yearsActive: 25,
   ),
   Author(
-    id: '4',
+    id: 'a4',
     firstName: 'Samin',
     lastName: 'Nosrat',
     bio:
@@ -378,7 +378,7 @@ final List<Author> chefAuthors = [
     yearsActive: 15,
   ),
   Author(
-    id: '5',
+    id: 'a5',
     firstName: 'Roy',
     lastName: 'Choi',
     bio:
@@ -389,7 +389,7 @@ final List<Author> chefAuthors = [
     yearsActive: 20,
   ),
   Author(
-    id: '6',
+    id: 'a6',
     firstName: 'Alice',
     lastName: 'Waters',
     bio:
@@ -400,7 +400,7 @@ final List<Author> chefAuthors = [
     yearsActive: 45,
   ),
   Author(
-    id: '7',
+    id: 'a7',
     firstName: 'José',
     lastName: 'Andrés',
     bio:
@@ -411,7 +411,7 @@ final List<Author> chefAuthors = [
     yearsActive: 30,
   ),
   Author(
-    id: '8',
+    id: 'a8',
     firstName: 'Dominique',
     lastName: 'Crenn',
     bio:
@@ -422,7 +422,7 @@ final List<Author> chefAuthors = [
     yearsActive: 20,
   ),
   Author(
-    id: '9',
+    id: 'a9',
     firstName: 'Marcus',
     lastName: 'Samuelsson',
     bio:
@@ -433,7 +433,7 @@ final List<Author> chefAuthors = [
     yearsActive: 25,
   ),
   Author(
-    id: '10',
+    id: 'a10',
     firstName: 'Nadiya',
     lastName: 'Hussain',
     bio:
