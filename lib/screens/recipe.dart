@@ -22,11 +22,13 @@ class RecipeScreen extends StatelessWidget {
           children: [
             Stack(
               children: [
-                Image.network(
-                  'https://images.unsplash.com/photo-1608219992759-8d74ed8d76eb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-                  height: 350,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
+                AspectRatio(
+                  aspectRatio: 4 / 3,
+                  child: Image.network(
+                    'https://images.unsplash.com/photo-1608219992759-8d74ed8d76eb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
                 ),
                 Positioned(
                   top: 16,
@@ -101,35 +103,25 @@ class RecipeScreen extends StatelessWidget {
                     'Recipe by',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                   ),
-                  const SizedBox(height: 8),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    spacing: 10,
-                    children: [
-                      CircleAvatar(
-                        radius: 26,
-                        child: Icon(FontAwesomeIcons.person, size: 24),
+                  ListTile(
+                    contentPadding: EdgeInsets.zero,
+                    leading: CircleAvatar(
+                      radius: 26,
+                      child: Icon(FontAwesomeIcons.person, size: 24),
+                    ),
+                    title: Text(
+                      '${recipe.author.firstName} ${recipe.author.lastName}',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            '${recipe.author.firstName} ${recipe.author.lastName}',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          Text(
-                            'Chef',
-                            style: TextStyle(color: Colors.grey.shade700),
-                          ),
-                        ],
-                      ),
-                    ],
+                    ),
+                    subtitle: Text(
+                      'Chef',
+                      style: TextStyle(color: Colors.grey.shade700),
+                    ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 10),
                   Text(
                     'Description',
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
