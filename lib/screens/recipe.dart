@@ -139,6 +139,106 @@ class RecipeScreen extends StatelessWidget {
                     recipe.description,
                     style: TextStyle(color: Colors.grey.shade600, fontSize: 18),
                   ),
+                  const SizedBox(height: 20),
+                  Row(
+                    spacing: 15,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          padding: const EdgeInsets.only(left: 10),
+                          height: 70,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.grey.shade300,
+                              width: 1,
+                            ),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Row(
+                            spacing: 5,
+                            children: [
+                              CircleAvatar(
+                                backgroundColor: Colors.grey.shade200,
+                                radius: 22,
+                                child: Icon(
+                                  FontAwesomeIcons.clock,
+                                  color: Colors.orange,
+                                  // size: 20,
+                                ),
+                              ),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Cooking Time',
+                                    style: TextStyle(
+                                      color: Colors.grey.shade700,
+                                    ),
+                                  ),
+                                  Text(
+                                    '${recipe.cookTimeMinutes.toString()} min',
+                                    style: TextStyle(
+                                      color: Colors.orange,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          padding: const EdgeInsets.only(left: 10),
+                          height: 70,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.grey.shade300,
+                              width: 1,
+                            ),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Row(
+                            spacing: 5,
+                            children: [
+                              CircleAvatar(
+                                backgroundColor: Colors.grey.shade200,
+                                radius: 22,
+                                child: Icon(
+                                  FontAwesomeIcons.utensils,
+                                  color: Colors.orange,
+                                  // size: 20,
+                                ),
+                              ),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Cuisine',
+                                    style: TextStyle(
+                                      color: Colors.grey.shade700,
+                                    ),
+                                  ),
+                                  Text(
+                                    'Italian',
+                                    style: TextStyle(
+                                      color: Colors.orange,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
