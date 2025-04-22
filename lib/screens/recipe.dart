@@ -20,6 +20,7 @@ class RecipeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            // recipe image
             Stack(
               children: [
                 AspectRatio(
@@ -67,6 +68,8 @@ class RecipeScreen extends StatelessWidget {
                 ),
               ],
             ),
+
+            // recipe content
             Padding(
               padding: const EdgeInsets.all(22),
               child: Column(
@@ -230,6 +233,45 @@ class RecipeScreen extends StatelessWidget {
                         ),
                       ),
                     ],
+                  ),
+                  const SizedBox(height: 20),
+                  Divider(color: Colors.grey.shade200),
+                  const SizedBox(height: 10),
+                  Row(
+                    spacing: 10,
+                    children: [
+                      Icon(FontAwesomeIcons.bowlFood, color: Colors.orange),
+                      Text(
+                        'Ingredients',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  Column(
+                    spacing: 5,
+                    children:
+                        recipe.ingredients.map((ingredient) {
+                          return Row(
+                            spacing: 5,
+                            children: [
+                              Icon(
+                                FontAwesomeIcons.solidCircleDot,
+                                size: 8,
+                                color: Colors.grey,
+                              ),
+                              Expanded(
+                                child: Text(
+                                  ingredient,
+                                  style: TextStyle(fontSize: 16),
+                                ),
+                              ),
+                            ],
+                          );
+                        }).toList(),
                   ),
                 ],
               ),
