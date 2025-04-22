@@ -273,6 +273,43 @@ class RecipeScreen extends StatelessWidget {
                           );
                         }).toList(),
                   ),
+                  const SizedBox(height: 20),
+                  Row(
+                    spacing: 10,
+                    children: [
+                      Icon(FontAwesomeIcons.noteSticky, color: Colors.orange),
+                      Text(
+                        'Instructions',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  Column(
+                    spacing: 5,
+                    children:
+                        recipe.instructions.map((instruction) {
+                          return Row(
+                            spacing: 5,
+                            children: [
+                              Icon(
+                                FontAwesomeIcons.solidCircleDot,
+                                size: 8,
+                                color: Colors.grey,
+                              ),
+                              Expanded(
+                                child: Text(
+                                  instruction,
+                                  style: TextStyle(fontSize: 16),
+                                ),
+                              ),
+                            ],
+                          );
+                        }).toList(),
+                  ),
                 ],
               ),
             ),
